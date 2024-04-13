@@ -1,11 +1,10 @@
-package ar.edu.unjju.fi.ejercicio4;
+package ar.edu.unju.fi.ejercicio4;
 
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-
 		Scanner entrada =new Scanner(System.in);
 		System.out.println("Ingrese un numero: ");
 		int num=entrada.nextInt();
