@@ -35,4 +35,17 @@ public class Persona {
 		System.out.println("Provincia: "+ provincia);
 		
 	}
+	public Persona() {
+		
+	}
+	
+	public Persona(String a, String b, String d) {
+		dni = a;
+		nombre = b;
+		provincia =d;
+	}
+	
+	
+	
+	
 }
