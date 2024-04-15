@@ -33,6 +33,15 @@ public class Main {
 
 		 Persona persona2 = new Persona(dni2, nombre2, provincia2, fecnac2);
 		 persona2.mostrarDatos();
+		 
+		 System.out.println("Ingrese los datos para la tercera persona persona: ");
+			String dni3= lector.nextLine();
+			String nombre3= lector.nextLine();
+			LocalDate fecnac3 =LocalDate.parse(lector.nextLine(), formatter);
+			String provincia3= lector.nextLine();
+
+			 Persona persona3 = new Persona(dni3, nombre3, provincia3, fecnac3);
+			 persona3.mostrarDatos();
 	 
 	 lector.close();
 			 
