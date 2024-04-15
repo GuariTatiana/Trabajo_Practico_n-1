@@ -24,6 +24,7 @@ public class Persona {
 		System.out.println("DNI: "+ dni);
 		System.out.println("Nombre: "+ nombre);
 		System.out.println("Fecha de nacimiento: "+ fecnac);
+		System.out.println("La edad de la persona: "+ calcularedad());
 		if (mayoredad()) {
 			System.out.println("La persona es MAYOR de edad");
 			
@@ -34,18 +35,27 @@ public class Persona {
 		}
 		System.out.println("Provincia: "+ provincia);
 		
+		
+		
 	}
 	public Persona() {
 		
 	}
 	
-	public Persona(String a, String b, String d) {
-		dni = a;
-		nombre = b;
-		provincia =d;
+	public Persona(String dni, String nombre, String provincia, LocalDate fecnac) {
+		this.dni = dni;
+		this.nombre = nombre;
+		this.provincia = provincia;
+		this.fecnac =fecnac;
+		
 	}
-	
-	
-	
+		
+	//public Persona(String dni, String nombre, String provincia, LocalDate fecnac) {
+		//this.dni = dni;
+		//this.nombre = nombre;
+		//this.provincia = "Jujuy";
+		//this.fecnac =fecnac;
+	//}
+
 	
 }
