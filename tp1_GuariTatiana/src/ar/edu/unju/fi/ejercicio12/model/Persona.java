@@ -63,19 +63,19 @@ public class Persona {
     public String EstaciondelAño () {
     	 int dia = fechaNacimiento.get(Calendar.DAY_OF_MONTH);
          int mes = fechaNacimiento.get(Calendar.MONTH) + 1; 
+       
          String estacion="";
          
          if ((mes == 12 && dia >= 21)||(mes == 3 && dia <=20) ) {
-        	 estacion = "Verano";
+        	 estacion= "Verano";
         } else if  (( mes ==3  && dia >= 21) || (mes == 6 && dia <= 20)) {
-            estacion = "Otoño";
+            estacion ="Otoño";
         } else if ((mes == 6 && dia >=21)||(mes ==9 && dia <= 20)) {
-        	estacion ="Invierno";
+        	estacion= "Invierno";
         } else if ((mes == 9 && dia >=21)||(mes ==12 && dia <= 20)) {
         	estacion = "Primavera";
         }
-         
-        return estacion;
+              return estacion;
     }
        
   
