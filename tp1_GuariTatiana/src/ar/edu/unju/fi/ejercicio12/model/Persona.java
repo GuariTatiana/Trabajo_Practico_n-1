@@ -61,21 +61,22 @@ public class Persona {
     }
     
     public String EstaciondelAño () {
-    	 int dia = fechaNacimiento.get(Calendar.DAY_OF_MONTH);
+    	
          int mes = fechaNacimiento.get(Calendar.MONTH) + 1; 
        
          String estacion="";
          
-         if ((mes == 12 && dia >= 21)||(mes == 3 && dia <=20) ) {
+         if (mes == 12|| mes == 1 || mes == 2 ) {
         	 estacion= "Verano";
-        } else if  (( mes ==3  && dia >= 21) || (mes == 6 && dia <= 20)) {
+        } else if  ( mes ==3 || mes==4 || mes == 5) {
             estacion ="Otoño";
-        } else if ((mes == 6 && dia >=21)||(mes ==9 && dia <= 20)) {
+        } else if (mes == 6 || mes==7||mes==8) {
         	estacion= "Invierno";
-        } else if ((mes == 9 && dia >=21)||(mes ==12 && dia <= 20)) {
+        } else {
         	estacion = "Primavera";
         }
-              return estacion;
+        
+         return estacion;
     }
        
   
@@ -84,7 +85,7 @@ public class Persona {
             fechaNacimiento.get(Calendar.DAY_OF_MONTH) + "/" + 
             (fechaNacimiento.get(Calendar.MONTH) + 1) + "/" + 
             fechaNacimiento.get(Calendar.YEAR) + "\nEdad: " +
-            calcularEdad() + " años" + "\nSigno del zodiaco: " + calcularSignoZodiaco() + "\nEstacion: "+ EstaciondelAño () ;
+            calcularEdad() + " años" + "\nSigno del zodiaco: " + calcularSignoZodiaco() + "\nEstacion: "+ EstaciondelAño() ;
 
     }
 
