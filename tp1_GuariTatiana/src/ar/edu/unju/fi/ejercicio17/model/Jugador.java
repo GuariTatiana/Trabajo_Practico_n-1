@@ -1,90 +1,93 @@
 package ar.edu.unju.fi.ejercicio17.model;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
 public class Jugador {
+    private String nombre;
+    private String apellido;
+    private Date fechaNacimiento;
+    private String nacionalidad;
+    private double estatura;
+    private double peso;
+    private String posicion;
 
-	private String nombre;
-	private String apellido;
-	private Calendar fechanac;
-	private String nacionalidad;
-	private int estatura;
-	private int peso;
-	private String posicion;
-	
-	public Jugador() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Jugador(String nombre, Calendar fechaNacimiento,
-			String apellido, String nacionalidad, int estatura,
-			int peso, String posicion) {
-        this.setNombre(nombre);
-        this.setApellido(apellido);
-        this.fechanac= fechaNacimiento;
-        this.setNacionalidad(nacionalidad);
-        this.setEstatura(estatura);
-        this.setPeso(peso);
-        this.setPosicion(posicion);
-   }
-	
-	public int calcularEdad() {
-        Calendar hoy = new GregorianCalendar();
-        int ajuste = 0;
-        if (hoy.get(Calendar.DAY_OF_YEAR) - fechanac.get(Calendar.DAY_OF_YEAR) < 0) {
-            ajuste = -1;
-        }
-        return hoy.get(Calendar.YEAR) - fechanac.get(Calendar.YEAR) + ajuste;
+    public Jugador(String nombre, String apellido, Date fechaNacimiento, String nacionalidad, double estatura, double peso, String posicion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.nacionalidad = nacionalidad;
+        this.estatura = estatura;
+        this.peso = peso;
+        this.posicion = posicion;
     }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public int calcularEdad() {
+        Calendar fechaNacimiento = Calendar.getInstance();
+        fechaNacimiento.setTime(this.fechaNacimiento);
+        Calendar hoy = Calendar.getInstance();
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+        int edad = hoy.get(Calendar.YEAR) - fechaNacimiento.get(Calendar.YEAR);
+        if (hoy.get(Calendar.DAY_OF_YEAR) < fechaNacimiento.get(Calendar.DAY_OF_YEAR)) {
+            edad--;
+        }
+        return edad;
+    }
 
-	public String getApellido() {
-		return apellido;
-	}
+    // Getters y setters
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
+    public String getApellido() {
+        return apellido;
+    }
 
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-	public int getEstatura() {
-		return estatura;
-	}
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
 
-	public void setEstatura(int estatura) {
-		this.estatura = estatura;
-	}
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
-	public int getPeso() {
-		return peso;
-	}
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
 
-	public void setPeso(int peso) {
-		this.peso = peso;
-	}
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
 
-	public String getPosicion() {
-		return posicion;
-	}
+    public double getEstatura() {
+        return estatura;
+    }
 
-	public void setPosicion(String posicion) {
-		this.posicion = posicion;
-	}
-	
-	
+    public void setEstatura(double estatura) {
+        this.estatura = estatura;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
+    }
 }
