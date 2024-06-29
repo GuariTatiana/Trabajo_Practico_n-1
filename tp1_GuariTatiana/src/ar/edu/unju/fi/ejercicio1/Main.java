@@ -10,7 +10,7 @@ public class Main {
 		int d= 20;
 		int e= 9;
 		
-		int promedio= (a+b+c+d+e)/5;
+		double promedio= (a+b+c+d+e)/5;
 		System.out.printf("El promedio es:"+ promedio);
 	}
 
